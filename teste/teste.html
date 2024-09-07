@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>cronometro</title>
+    <style>
+        html body {
+            height: 100%;
+        }
+
+        .contorno {
+            width: 100%;
+            height: 625px;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        .center {
+            width: 300px;
+            background-color: beige;
+            place-items: center;
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .center select {
+            width: 175px;
+        }
+
+        button {
+            background-color: darkseagreen;
+            color: white;
+            font-size: 32px;
+            padding: 8PX 20PX;
+            border: 0;
+            cursor: pointer;
+            transition: 0.5s;
+            border-radius: 15px;
+
+        }
+
+        button:hover {
+            transition: 0.5s;
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contorno">
+        <div class="container">
+            <div class="center">
+                <h2>Minutos </h2>
+                <select name="minutos" id="minutos"></select>
+
+                <h2>Segundos </h2>
+                <select name="segundos" id="segundos"></select>
+
+                <br />
+                <br />
+
+                <button id="comecar">Começar!</button>
+
+                <div id="display">
+                    <h3></h3>
+                </div>
+            </div><!--center-->
+        </div><!--container-->
+    </div><!--contorno-->
+
+    <script>
+        var display = document.getElementById("display");
+
+        var minutos = document.getElementById("minutos");
+        var segundos = document.getElementById("segundos");
+        var comecar = document.getElementById("comecar");
+
+
+
+        var cronometroSeg;
+        var minutoAtual;
+        var segundoAtual;
+
+        var interval;
+
+        for (var i = 0; i <= 60; i++) {
+            minutos.innerHTML += '<option value= "' + i + '">' + i + '</option>';
+        }
+
+        for (var i = 0; i <= 60; i++) {
+            segundos.innerHTML += '<option value= "' + i + '">' + i + '</option>';
+        }
+
+        comecar.addEventListener('click', function () {
+            minutoAtual = minutos.value;
+            segundoAtual = segundos.value;
+
+            display.childNodes[1].innerHTML = minutoAtual + ":" + segundoAtual;
+
+            interval = setInterval(function () {
+                segundoAtual--;
+                if (segundoAtual <= 0) {
+                    if (minutoAtual > 0) {
+                        minutoAtual--;
+                        segundoAtual = 59;
+                    } else {
+                        alert("acabou!");
+                        clearInterval(interval);
+                    }
+                }
+                display.childNodes[1].innerHTML = minutoAtual + ":" + segundoAtual;
+
+            }, 1000);
+        })
+    </script>
+
+</body>
+
+</html>

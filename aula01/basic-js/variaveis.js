@@ -51,6 +51,6 @@ var $False = false;
 var True = true;
 var False = false;
 
-alert($False);  //remover comentario para ver o código em ação  
+// alert($False);  //remover comentario para ver o código em ação  
 
 //************************************************ */

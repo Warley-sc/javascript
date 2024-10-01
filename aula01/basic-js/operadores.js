@@ -66,7 +66,56 @@ operadores aritiméticos e nada mais nada menos que uma soma/multiplicação/sub
 
 /*****Operadores aritméticos prioridade ******/
 
-var n1 = 5;
-var n2 = 5;
-var n3 = (n1 + n2) * 5 + 2;
-document.writeln(n3);
+// var n1 = 5;  //retirar do comentario
+// var n2 = 5;  //retirar do comentario
+// var n3 = (n1 + n2) * 5 + 2;  //retirar do comentario
+// document.writeln(n3);  //retirar do comentario
+
+
+/* vamos falar de operadores relacionais, os operadores relacionais, sãoos operadores de grande parte das lingugens deprogramação, sendo eles 
+ '   >    '    maior que
+ '   <    '    menor que
+ '   >=   '    maior ou igual
+ '   <=   '    menor ou igual
+ '   ==   '    igual
+ '   !=   '    diferente que
+ '  ===   '    denticos
+ '  !==   '    diferencia tipos e valores
+
+*/
+
+/*****Operadores aritméticos prioridade ******/
+
+// var x = 5;  //retirar do comentario
+// var y = '5';  //retirar do comentario
+// var z = x !== y;  //retirar do comentario e mudar os operadores relacionais
+// document.writeln(z)
+
+/*
+
+operadores lógicos, basicamente são operadores que relaciona como "Not"(Negação), "And" (E) e "or"(OU), no javascript e feita da seguinte maneira essa relação
+
+'   !    '  -> negação/Not
+'   &&   '  -> E/And
+'   ||   '  -> OU/Or
+*/
+// var x = 5; //retirar do comentario
+// var y = 10; //retirar do comentario
+// var z = ! x;  //retirar do comentario e mudar os operadores logicos
+
+// document.writeln(z)
+
+
+/*
+
+operadores ternarios, são operadores que tem duas atribuiçoes e nele diz que se uma coisa aconter seguir tal caminho.
+são eles :
+'    ?    '  teste logico caso a 1 seja verdadeira 
+'    :    '  teste logico caso a primeira de false a segunda dará verdadeira
+
+ */
+
+// var x = 10;
+// var ret = x % 2 == 0 ? "aprovado" : "reprovado";
+// window.document.writeln(ret)
+

@@ -5,7 +5,6 @@
 }
 html body {
   height: 100%;
-  background-color: #555;
 }
 section.wraper {
   display: flex;
@@ -17,6 +16,7 @@ section.wraper {
   color: white;
 }
 .fwraper {
+    box-shadow: 2px 2px 5px #ddd;
   box-shadow: 2px 2px 5px #4d4d4d;
   border-radius: 10px;
   max-width: 400px;
@@ -58,8 +58,16 @@ section.wraper {
   border-radius: 10px;
   color: #555;
   width: 100%;
-  background-color: #ccc;
+  background-color: white;
   height: 60px;
   padding: 8px;
   text-align: left;
+  transition: 1s;
+  border: none;
+}
+input[type="button"]:hover{
+    /* border: none; */
+    color: white;
+    transition: 1s;
+    background-color: darkgreen;
 }

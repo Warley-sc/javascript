@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        section {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .wraper {
+            padding: 20px 12px 30px;
+            width: 100%;
+            max-width: 350px;
+            max-height: 480px;
+            background-color: #ccc;
+            border-radius: 10px;
+            box-shadow: 5px 8px 10px #555;
+        }
+
+        .wraper h2 {
+            font-size: 30px;
+            display: block;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .wraper p {
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .wraper input[type=number] {
+            height: 40px;
+            padding: 10px;
+            display: block;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: none;
+            width: 100%;
+            color: black;
+        }
+
+        .wraper input[type=button] {
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            font-size: 18px;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+            border: none;
+            transition: 1s;
+            color: #767676;
+
+        }
+
+        .wraper input[type=button]:hover {
+            color: black;
+
+            background-color: lightgreen;
+        }
+
+        .resultado {
+            display: none;
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            margin-top: 20px;
+            border-radius: 10px;
+            padding: 10px;
+            color: #767676;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="wraper">
+                <h2>
+                    Verificar idade
+                </h2>
+                <div class="inputs-conter">
+
+                    <p>Idade</p>
+                    <input type="number" id="idade_number" placeholder="Sua idade">
+                    <input type="button" value="Consultar" onclick="consulte()">
+                    <div class="resultado" id="result"></div> <!-- resultados-->
+
+                </div> <!-- inputs-->
+            </div> <!-- wraper-->
+        </div> <!-- container-->
+    </section> <!--section idade-->
+
+
+
+    <script>
+
+        function consulte() {
+            var idade = window.document.getElementById('idade_number').value;
+            var resultado = window.document.getElementById('result');
+
+            if (idade >= 65) {
+                resultado.style.display = 'block'
+                resultado.innerHTML = ` A idade do usuario é ${idade}, usuario idoso!`
+            }
+            else if (idade >= 18) {
+                resultado.style.display = 'block'
+                resultado.innerHTML = ` A idade do usuario é ${idade}, usuario maior de idade`
+            }
+            else if (idade < 18 && idade > 0) {
+                resultado.style.display = 'block'
+                resultado.innerHTML = ` A idade do usuario é ${idade}, usuario menor de idade`
+            }
+            else {
+                resultado.style.display = 'block'
+                resultado.innerHTML = `digite uma idade valida`
+            }
+        }
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

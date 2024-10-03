@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html body {
+            background-color: #ebebeb;
+            height: 100%;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        .card {
+            height: 100vh;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .wraper {
+
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-wraper {
+            margin-left: 15px;
+            padding: 10px;
+            width: 250px;
+            height: 200px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+        }
+
+        .back {
+            margin-bottom: 15px;
+            width: 100%;
+            height: 150px;
+            background-color: #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .card-text {
+            display: none;
+            text-align: justify;
+        }
+
+        .fechar {
+            cursor: pointer;
+            display: none;
+            margin: 10px 0;
+            padding-top: 5px;
+            border-radius: 20px;
+            height: 40px;
+            width: 40px;
+            background-color: #ccc;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 815px) {
+            .wraper {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+
+        }
+        
+    </style>
+
+
+</head>
+
+<body>
+    <section class="card">
+        <div class="container">
+            <div class="wraper">
+                <div class="card1 card-wraper" id="card_wraper1">
+
+
+                    <div class="back" id="abrir" onclick="text_card1()"></div><!--img-->
+                    <div class="card-text" id="text_card1">
+
+                        <div class="fechar" id="fechar" onclick="exit()">
+                            x
+                        </div><!--close-->
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ex dolor quasi reiciendis
+                            in,
+                            earum magni saepe error suscipit fuga aliquam quidem, ut optio necessitatibus dolores
+                            asperiores facilis expedita nostrum?
+                        </p>
+
+                    </div><!--card-text"-->
+                </div> <!--card wraper-->
+
+
+        </div>
+        </div>
+    </section>
+
+    <script>
+        var card = window.document.getElementById('card_wraper1')
+        var text = window.document.getElementById('text_card1')
+        var fechar = window.document.getElementById('fechar')
+
+
+
+
+        function text_card1() {
+            card.style.height = "400px";
+            text.style.display = 'block'
+            fechar.style.display = 'block'
+        }
+        function exit() {
+            card.style.height = "200px";
+
+            text.style.display = 'none'
+            fechar.style.display = 'none'
+        }
+
+    </script>
+
+</body>
+
+</html>
